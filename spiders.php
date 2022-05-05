@@ -42,9 +42,9 @@ class Spider {
         $getOne->setFetchMode(PDO::FETCH_ASSOC);
         $getOne->execute(['id'=>$id]);
 
-        $one = $getOne->fetchAll();
+        $one = $getOne->fetch();
 
-        return $array;
+        return $one;
 
     }
 
@@ -92,7 +92,7 @@ class Spider {
         }
 
         //Trie des éléments pour effacer les doublons du start dans le contain
-        for ($i = 0; $i< $results['contain'][$i]; $i++) {
+        for ( @$i = 0; $i< @$results['contain'][$i]; @$i++) {
 
             foreach ($results['start'] as $element ) {
         

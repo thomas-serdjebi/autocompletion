@@ -8,7 +8,9 @@ html,body {
 
 body {
     background-image:url('assets/index_background.jpg');
-    background-size: cover
+    
+    background-repeat: no-repeat;
+    
 }
 
   
@@ -34,4 +36,9 @@ body {
 input {
     width: 550px;
     height: 50px;
+}
+
+.dropdown-item {
+    background-color: white;
+    font-weight:bold;
 }

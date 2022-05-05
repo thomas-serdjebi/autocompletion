@@ -1,0 +1,52 @@
+
+main {
+    text-align:center;
+}
+
+
+
+
+.row-container {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+  
+}
+
+.container {
+    width:70%;
+    
+}
+
+.blank {
+    width:10%;
+}
+
+
+img {
+    width:100%;
+    height:auto;
+    width:20%;
+}
+
+a {
+    text-decoration:none;
+    color:black;
+}
+
+tr {
+    height:150px;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height:auto;
+    width:70%;
+}
+
+h1 {
+    margin-top:3%;
+}
+
+
+

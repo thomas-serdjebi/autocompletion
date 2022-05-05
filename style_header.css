@@ -1,0 +1,27 @@
+.logo {
+    width:100%;
+    height:auto;
+    width:80%;
+}
+
+.header_search {
+    position:relative;
+    right:3%;
+}
+
+#header_dropdown {
+    
+    position: absolute;
+    top: 0;
+    margin-top:40%;
+
+}
+
+
+.dropdown-item {
+    text-align:left;
+    font-size:1rem;
+    
+
+}
+
