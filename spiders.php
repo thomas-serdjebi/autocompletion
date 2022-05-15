@@ -42,7 +42,7 @@ class Spider {
         $getOne->setFetchMode(PDO::FETCH_ASSOC);
         $getOne->execute(['id'=>$id]);
 
-        $one = $getOne->fetch();
+        $one = $getOne->fetchAll();
 
         return $one;
 

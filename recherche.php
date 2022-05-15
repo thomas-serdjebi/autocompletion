@@ -14,6 +14,7 @@ require('recherche_controller.php')
         <script src="script.js"></script>
         <link rel="stylesheet" href="style_recherche.css">
         <link rel="stylesheet" href="style_header.css">
+        <link rel="stylesheet" href="style_footer.css">
         
     </head>
 
@@ -23,61 +24,69 @@ require('recherche_controller.php')
         <main>
 
 
-            <div class="container">
-                <h1>Résultats de votre recherche</h1>
+            <section>
 
-                <div class="row">
-                    <div class="col-10">
-                        <table class="table table-image">
-                            <thead>
-                                <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Nom Commun</th>
-                                <th scope="col">Nom Latin</th>
-                                <th scope="col">Région</th>
-                                <th scope="col">Mortelle</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach($results['start'] as $spider) {
-                                if ($spider['mortelle'] == 1 ) { $spider['mortelle'] = 'Oui' ;} else {$spider['mortelle'] = 'Non' ;}
-                                echo "
-                                
-                                <tr>
-                                    <td>
-                                    <a href='element.php?id=".$spider['id']."'><img src='".$spider['image']."' class='img-fluid img-thumbnail' alt='Sheep'></a>
-                                    </td>
-                                    <td><a href='element.php?id='".$spider['id']."''>".$spider['nom_commun']."</a></td>
-                                    <td><a href='element.php?id='".$spider['id']."''>".$spider['nom_latin']."</a></td>
-                                    <td>".$spider['region']."</td>
-                                    <td>".$spider['mortelle']."</td>
-                                </tr>
-                                </a>"; } 
-                            ?>
+                <div class="container">
+                    <h1>Résultats de votre recherche</h1>
 
-                            <?php foreach($results['contain'] as $spider) {
-                                if ($spider['mortelle'] == 1 ) { $spider['mortelle'] = 'Oui' ;} else {$spider['mortelle'] = 'Non' ;}
-                                echo "
-                                <tr>
-                                    <td class='w-25'>
-                                        <img src='".$spider['image']."' class='img-fluid img-thumbnail' alt='Sheep'>
-                                    </td>
-                                    <td>".$spider['nom_commun']."</td>
-                                    <td>".$spider['nom_latin']."</td>
-                                    <td>".$spider['region']."</td>
-                                    <td>".$spider['mortelle']."</td>
-                                </tr>"; } 
-                            ?>
-                            </tbody>
-                        </table>   
+                    <div class="row">
+                        <div class="col-10">
+                            <table class="table table-image">
+                                <thead>
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Nom Commun</th>
+                                    <th scope="col">Nom Latin</th>
+                                    <th scope="col">Région</th>
+                                    <th scope="col">Mortelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach($results['start'] as $spider) {
+                                    if ($spider['mortelle'] == 1 ) { $spider['mortelle'] = 'Oui' ;} else {$spider['mortelle'] = 'Non' ;}
+                                    echo "
+                                    
+                                    <tr>
+                                        <td>
+                                        <a href='element.php?id=".$spider['id']."'><img src='".$spider['image']."' class='img-fluid img-thumbnail' alt='Sheep'></a>
+                                        </td>
+                                        <td><a href='element.php?id=".$spider['id']."'>".$spider['nom_commun']."</a></td>
+                                        <td><a href='element.php?id=".$spider['id']."'>".$spider['nom_latin']."</a></td>
+                                        <td>".$spider['region']."</td>
+                                        <td>".$spider['mortelle']."</td>
+                                    </tr>
+                                    </a>"; } 
+                                ?>
+
+                                <?php foreach($results['contain'] as $spider) {
+                                    if ($spider['mortelle'] == 1 ) { $spider['mortelle'] = 'Oui' ;} else {$spider['mortelle'] = 'Non' ;}
+                                    echo "
+                                    <tr>
+                                        <td class='w-25'>
+                                        <a href='element.php?id=".$spider['id']."'><img src='".$spider['image']."' class='img-fluid img-thumbnail' alt='Sheep'></a>
+                                        </td>
+                                        <td><a href='element.php?id=".$spider['id']."'>".$spider['nom_commun']."</td></a>
+                                        <td><a href='element.php?id=".$spider['id']."'>".$spider['nom_latin']."</td></a>
+                                        <td>".$spider['region']."</td>
+                                        <td>".$spider['mortelle']."</td>
+                                    </tr>"; } 
+                                ?>
+                                </tbody>
+                            </table>   
+                        </div>
                     </div>
                 </div>
-            </div>
-                
-                        
 
+            </section>
+                
 
         </main>
+
+        <section class="footer">
+
+            <?php require('footer.php')?>
+
+        </section>
 
 
     </body>
